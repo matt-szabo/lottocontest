@@ -23,7 +23,8 @@ class App extends Component {
             ready:false,
             ticketsBought:[],
             final:false,
-            game:0
+            game:0,
+            error:''
         };
 
 
@@ -79,11 +80,18 @@ class App extends Component {
                 tickets: temparray2,
                 ticketNum: this.state.ticketNum + 1,
                 pot: this.state.pot + 10,
-                ticketsBought:nameHolder
+                ticketsBought:nameHolder,
+                error:''
             });
         }
 
     }
+
+    errorMsg = (msg) => {
+        this.setState({error:msg})
+    }
+
+
 
     // getRandomIntInclusive is a function using the window.crypto.getRandomValues for a
     // truer random number selection as opposed to using Math.random
@@ -177,7 +185,11 @@ class App extends Component {
 
                 {/*// if this.state.final then remove name submission form elements from display*/}
 
-                { this.state.ready && !this.state.final ? <NameForm onSubmit={this.buyer}/> : ''}
+                {/*// show error msg if present*/}
+
+                { this.state.error.length > 0 ? <p>{this.state.error}</p> : ''}
+
+                { this.state.ready && !this.state.final ? <NameForm errorMsg={this.errorMsg} onSubmit={this.buyer}/> : ''}
                 { this.state.ready && !this.state.final ? <Button buttonLabel="Pick the Winners" onSubmit={this.finalizeDraw}/> : ''}
 
                 <Winners list={this.state.results} />

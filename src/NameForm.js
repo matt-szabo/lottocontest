@@ -25,7 +25,12 @@ class NameForm extends Component {
 
         if (this.state.name.length === 0) {
 
-            alert("Please enter a name!");
+            let text = "Please enter a valid name.";
+
+            this.props.errorMsg(text);
+
+            event.preventDefault();
+
         }
 
         else {
