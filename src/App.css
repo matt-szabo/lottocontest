@@ -23,6 +23,21 @@ input[type=text] {
 
 }
 
+@media only screen and (max-width:700px) {
+
+  input[type=text] {
+    width: 60%;
+    padding: .6rem;
+    margin: .4rem 0;
+    display: inline-block;
+    border: 1px solid #bababa;
+    border-radius: 2.8rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding-left: 20px;  }
+}
+
+
 button {
   background: #04427b;
   background-image: -webkit-linear-gradient(top, #04427b, #04427b);
