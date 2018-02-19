@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+}
+
+
+p{
+  font-family: 'Tahoma',Arial,Helvetica,sans-serif;
+  font-size: 1rem;
+  padding: .1rem .5rem .1rem .5rem;;
+
+}
+
+input[type=text] {
+  width: 25%;
+  padding: .6rem;
+  margin: .4rem 0;
+  display: inline-block;
+  border: 1px solid #bababa;
+  border-radius: 2.8rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  padding-left: 20px;
+
+}
+
+button {
+  background: #04427b;
+  background-image: -webkit-linear-gradient(top, #04427b, #04427b);
+
+  -webkit-border-radius: 2.8rem;
+  -moz-border-radius: 2.8rem;
+  border-radius: 2.8rem;
+  font-family: 'Tahoma',Arial,Helvetica,sans-serif;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: .8rem 1.3rem .8rem 1.3rem;
+  text-decoration: none;
+  border:none;
+  margin:4px;
+}
+
+.header{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #04427b;
+  color: white;
+}
+
