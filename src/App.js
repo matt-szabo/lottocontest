@@ -48,7 +48,7 @@ class App extends Component {
             temparray.push({ticketOwner:"Unsold",ticketNumber:i,sold:false});
         }
 
-        this.setState({final:false,tickets: temparray,ticketNum:0,ready:true,results:[],ticketsBought:[],game:this.state.game +1})
+        this.setState({final:false,tickets: temparray,ticketNum:0,ready:true,results:[],ticketsBought:[],game:this.state.game +1,error:''})
 
     }
 
@@ -70,10 +70,6 @@ class App extends Component {
 
             nameHolder.push({ticketOwner: name,ticketNumber:this.state.ticketNum});
 
-            // temparray2[this.state.ticketNum].ticketOwner = name;
-            // temparray2[this.state.ticketNum].ticketNumber = this.state.ticketNum;
-            // temparray2[this.state.ticketNum].sold = true;
-
             temparray2[this.state.ticketNum] = {ticketOwner: name, ticketNumber : this.state.ticketNum, sold:true};
 
             this.setState({
@@ -83,6 +79,10 @@ class App extends Component {
                 ticketsBought:nameHolder,
                 error:''
             });
+        }
+
+        else {
+            this.setState({error:"Tickets are sold out."})
         }
 
     }
